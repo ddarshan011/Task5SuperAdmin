@@ -12,7 +12,7 @@ class StudentAdmin(admin.ModelAdmin):
         response['Content-Disposition'] = 'attachment; filename="export.csv"'
         writer = csv.writer(response)
         writer.writerow(['first_name', 'last_name'])
-        for obj in Student.objects.all():  # Exports ALL data
+        for obj in Student.objects.all():  # export all data
             writer.writerow([obj.first_name, obj.last_name])
         return response
     
