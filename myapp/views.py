@@ -1,5 +1,3 @@
-from django.shortcuts import render
-
 # Create your views here.
 from django.http import HttpResponse
 import csv
@@ -15,5 +13,5 @@ def export_csv(request):
     writer.writerow(['first_name', 'last_name'])  
     
     for obj in Student.objects.all():  # export all data
-        writer.writerow([obj.id, obj.field1, obj.field2]) 
+        writer.writerow([obj.first_name, obj.last_name]) 
     return response
